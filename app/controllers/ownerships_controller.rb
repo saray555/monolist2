@@ -2,7 +2,6 @@ class OwnershipsController < ApplicationController
   before_action :logged_in_user
 
   def create
-    binding.pry
     if params[:item_code]
       @item = Item.find_or_initialize_by(item_code: params[:item_code])
     else
@@ -28,8 +27,13 @@ class OwnershipsController < ApplicationController
     # TODO ユーザにwant or haveを設定する
     # params[:type]の値にHaveボタンが押された時には「Have」,
     # Wantボタンが押された時には「Want」が設定されています。
-    
 
+    #binding.pry
+      if params[:type] == "Have" 
+        current_user.have(@item)
+    elsif params[:type] == "Want"
+        current_user.want(@item)
+    end
   end
 
   def destroy
@@ -38,6 +42,14 @@ class OwnershipsController < ApplicationController
     # TODO 紐付けの解除。 
     # params[:type]の値にHave itボタンが押された時には「Have」,
     # Want itボタンが押された時には「Want」が設定されています。
+    if params[:type] == "Have it"
+        current_user.unhave(@item)
+        
+    elsif params[:type] == "Want it"
+        current_user.unwant(@item)
+
+
+    end
 
   end
 end
