@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
   ## TODO 実装
   def have(item)
     haves.find_or_create_by(item_id: item.id)
+    #have = haves.find_or_create_by(item_id: item.id)
   end
 
   def unhave(item)
