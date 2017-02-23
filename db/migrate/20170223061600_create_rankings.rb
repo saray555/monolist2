@@ -1,7 +1,9 @@
-class CreateItems < ActiveRecord::Migration
+class CreateRankings < ActiveRecord::Migration
   def change
-    create_table :items do |t|
-      t.string :asin
+    create_table :rankings do |t|
+#      t.string :item_name
+
+#      t.string :asin
       t.string :title
       t.string :description
       t.string :detail_page_url
@@ -12,6 +14,6 @@ class CreateItems < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-      t.index [:asin], unique: true
+#      t.index [:asin], unique: true
   end
 end

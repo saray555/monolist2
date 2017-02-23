@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'rankings/index'
+#  get 'rankings/index'
 
   root 'welcome#index'
 
@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get    'login' , to: 'sessions#new'
   post   'login' , to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
-  get    'ranking' , to: 'ranking#have'
-  get    'ranking' , to: 'ranking#want'
+  get    'rankings/have' , to: 'rankings#have'
+  get    'rankings/want' , to: 'rankings#want'
   
 
   resources :users
@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :ownerships, only: [:create, :destroy]
   resources :items , only: [:new , :show]
+  resources :ranking , only: [:show]
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
