@@ -11,7 +11,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :raw_info
 
       t.timestamps null: false
+      t.index :asin, unique: true
     end
-      t.index [:asin], unique: true
   end
 end

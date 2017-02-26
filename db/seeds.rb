@@ -81,3 +81,11 @@ user13.have(Item.find(3))
 #9位(4) Bootstrapファーストガイド [ 相澤裕介 ]
 #10位(3) パーフェクトRuby【電子書籍】[ Rubyサポーターズ ]
 
+item_ids = [5, 1, 2, 8, 3, 9, 10, 11, 4, 6, 7, 12].reverse
+1.upto(12) do |user_id|
+  item_ids.each do |item_id|
+    eval("user#{user_id}").want(Item.find(item_id))
+  end
+  item_ids.pop
+end
+#user13.want(Item.find(3))

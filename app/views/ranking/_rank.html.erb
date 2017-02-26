@@ -1,0 +1,9 @@
+<% if rank == 1 %>
+ <%= image_tag("rank01_01.png") %>
+<% elsif rank == 2 %>
+ <%= image_tag("rank01_02.png") %>
+<% elsif rank == 3 %>
+ <%= image_tag("rank01_03.png") %>
+<% else %>
+    <span class ="ranking-text "> <%= rank %></span> 
+<% end %>

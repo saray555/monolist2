@@ -1,0 +1,67 @@
+.ranking-text {
+	text-align: center;
+}
+
+.ranking-center {
+	display: inline-block;
+	text-align: left;
+}
+
+.jumbotron {
+    padding-right: 30px;
+    padding-left: 30px;
+    border-radius: 6px;
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 500px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+} */
+
+.ranking-text {
+    font-weight: bolder; 
+    font-size: 160%;
+}
+
+/* This parent can be any width and height */
+.block {
+  text-align: center;
+}
+ 
+/* The ghost, nudged to maintain perfect centering */
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+}
+ 
+/* The element to be centered, can
+   also be of any width and height */
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
+}
